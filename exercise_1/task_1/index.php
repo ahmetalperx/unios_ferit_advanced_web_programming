@@ -2,15 +2,15 @@
 
 // ---------------------------------------------------------------------------------------------- //
 
-// cd C:\Users\ahmetalper\Desktop\advanced_web_programming\exercise_1 && php task_1.php
+// cd C:\Users\ahmetalper\Desktop\advanced_web_programming\exercise_1\task_1 && php index.php
 
 // ---------------------------------------------------------------------------------------------- //
 
 interface iRadio {
 
-    public function create(string $work_name, string $work_text, string $work_link, string $identification_number) : void;
+    public function create(array $data) : self;
 
-    public function save() : void;
+    public function save() : self;
 
     public function read() : array;
 
@@ -32,21 +32,23 @@ class GraduateThesis implements iRadio {
 
     // ---------------------------------------------------------------------------------------------- //
 
-    public function create(string $work_name, string $work_text, string $work_link, string $identification_number) : void {
+    public function create(array $data) : self {
 
-        $this -> work_name = $work_name;
+        $this -> work_name = $data['work_name'] ?? '';
 
-        $this -> work_text = $work_text;
+        $this -> work_text = $data['work_text'] ?? '';
 
-        $this -> work_link = $work_link;
+        $this -> work_link = $data['work_link'] ?? '';
 
-        $this -> identification_number = $identification_number;
+        $this -> identification_number = $data['identification_number'] ?? '';
+
+        return $this;
 
     }
 
     // ---------------------------------------------------------------------------------------------- //
 
-    public function save() : void {
+    public function save() : self {
 
         try {
 
@@ -56,11 +58,13 @@ class GraduateThesis implements iRadio {
 
             $sql_statement -> execute([':work_name' => $this -> work_name,':work_text' => $this -> work_text,':work_link' => $this -> work_link,':identification_number' => $this -> identification_number]);
 
-        } catch (PDOException $database_exception) {
+        } catch (PDOException $exception) {
 
-            echo PHP_EOL . '[ ERROR ] | GraduateThesis | save() | ' . $database_exception -> getMessage() . PHP_EOL;
+            echo PHP_EOL . '[ ERROR ] | save() | ' . $exception -> getMessage() . PHP_EOL;
 
         }
+
+        return $this;
 
     }
 
@@ -76,9 +80,9 @@ class GraduateThesis implements iRadio {
 
             return $sql_statement -> fetchAll(PDO::FETCH_ASSOC);
 
-        } catch (PDOException $database_exception) {
+        } catch (PDOException $exception) {
 
-            echo PHP_EOL . '[ ERROR ] | GraduateThesis | read() | ' . $database_exception -> getMessage() . PHP_EOL;
+            echo PHP_EOL . '[ ERROR ] | read() | ' . $exception -> getMessage() . PHP_EOL;
 
             return [];
 
@@ -114,13 +118,17 @@ function main() : void {
 
         echo PHP_EOL . '[ INFO ] | database \'thesis\' and table \'graduate_theses\' created' . PHP_EOL;
 
-    } catch (PDOException $database_exception) {
+    } catch (PDOException $exception) {
 
-        echo '[ ERROR ] | ' . $database_exception -> getMessage() . PHP_EOL;
-        
+        echo PHP_EOL . '[ ERROR ] | main() | ' . $exception -> getMessage() . PHP_EOL;
+
         exit;
 
     }
+
+    // ---------------------------------------------------------------------------------------------- //
+
+    $graduate_thesis = new GraduateThesis();
 
     // ---------------------------------------------------------------------------------------------- //
 
@@ -132,7 +140,7 @@ function main() : void {
 
         $page_url = 'https://stup.ferit.hr/zavrsni-radovi/page/' . $page_number;
 
-        echo PHP_EOL . '[ INFO ] | ' . $page_url . PHP_EOL . PHP_EOL;
+        echo PHP_EOL . '[ URL ] | ' . $page_url . PHP_EOL . PHP_EOL;
 
         // ---------------------------------------------------------------------------------------------- //
 
@@ -176,15 +184,11 @@ function main() : void {
 
         // ---------------------------------------------------------------------------------------------- //
 
-        foreach ($article_nodes as $article_node) {
+        foreach ($article_nodes as $thesis_index => $article_node) {
 
             // ---------------------------------------------------------------------------------------------- //
 
-            if (!($article_node instanceof DOMElement)) {
-
-                continue;
-
-            }
+            if (!($article_node instanceof DOMElement)) continue;
 
             // ---------------------------------------------------------------------------------------------- //
 
@@ -210,11 +214,7 @@ function main() : void {
 
             // ---------------------------------------------------------------------------------------------- //
 
-            if (!($title_node instanceof DOMElement)) {
-
-                continue;
-
-            }
+            if (!($title_node instanceof DOMElement)) continue;
 
             // ---------------------------------------------------------------------------------------------- //
 
@@ -262,15 +262,11 @@ function main() : void {
 
             // ---------------------------------------------------------------------------------------------- //
 
-            echo '[ INFO ] | ' . $work_name . ' | ' . $identification_number . PHP_EOL;
+            echo '[ THESIS ' . ($thesis_index + 1) . ' ] | ' . $work_name . ' | ' . $identification_number . PHP_EOL;
 
             // ---------------------------------------------------------------------------------------------- //
 
-            $graduate_thesis = new GraduateThesis();
-
-            $graduate_thesis -> create($work_name, $work_text, $work_link, $identification_number);
-
-            $graduate_thesis -> save();
+            $graduate_thesis -> create(['work_name' => $work_name, 'work_text' => $work_text, 'work_link' => $work_link, 'identification_number' => $identification_number]) -> save();
 
             // ---------------------------------------------------------------------------------------------- //
 
@@ -286,13 +282,7 @@ function main() : void {
 
     // ---------------------------------------------------------------------------------------------- //
 
-    $graduate_thesis = new GraduateThesis();
-
-    $theses = $graduate_thesis -> read();
-
-    // ---------------------------------------------------------------------------------------------- //
-
-    foreach ($theses as $thesis) {
+    foreach ($graduate_thesis -> read() as $thesis) {
 
         echo PHP_EOL . 'id : ' . $thesis['id'] . PHP_EOL . PHP_EOL;
 
