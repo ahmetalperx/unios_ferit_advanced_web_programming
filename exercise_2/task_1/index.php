@@ -2,7 +2,7 @@
 
 // ---------------------------------------------------------------------------------------------- //
 
-// cd C:\Users\ahmetalper\Desktop\advanced_web_programming\exercise_2 && php task_1.php thesis
+// cd C:\Users\ahmetalper\Desktop\advanced_web_programming\exercise_2\task_1 && php index.php thesis
 
 // ---------------------------------------------------------------------------------------------- //
 
@@ -34,9 +34,9 @@ function main(int $argument_count, array $arguments) : void {
 
         $database_connection = new PDO('mysql:host=localhost;dbname=' . $database_name . ';charset=utf8mb4', 'root', '', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
-    } catch (PDOException $database_exception) {
+    } catch (PDOException $exception) {
 
-        echo PHP_EOL . '[ ERROR ] | ' . $database_exception -> getMessage() . PHP_EOL . PHP_EOL;
+        echo PHP_EOL . '[ ERROR ] | ' . $exception -> getMessage() . PHP_EOL . PHP_EOL;
 
         echo '// ---------------------------------------------------------------------------------------------- //' . PHP_EOL;
 
@@ -108,6 +108,8 @@ function main(int $argument_count, array $arguments) : void {
 
     $zip_archive = new ZipArchive();
 
+    // ---------------------------------------------------------------------------------------------- //
+
     if ($zip_archive -> open($zip_filename, ZipArchive::CREATE | ZipArchive::OVERWRITE) === true) {
 
         $zip_archive -> addFile($text_filename, $text_filename);
@@ -119,6 +121,10 @@ function main(int $argument_count, array $arguments) : void {
     } else {
 
         echo PHP_EOL . '[ ERROR ] | failed to create zip archive' . PHP_EOL . PHP_EOL;
+
+        echo '// ---------------------------------------------------------------------------------------------- //' . PHP_EOL;
+
+        exit(1);
 
     }
 
