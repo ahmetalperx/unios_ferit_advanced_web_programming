@@ -2,13 +2,13 @@
 
 // ---------------------------------------------------------------------------------------------- //
 
-// cd C:\Users\ahmetalper\Desktop\advanced_web_programming\exercise_2 && php -S localhost:8000
+// cd C:\Users\ahmetalper\Desktop\advanced_web_programming\exercise_2\task_3 && php -S localhost:8000
 
-// http://localhost:8000/task_3.php
+// http://localhost:8000/index.php
 
 // ---------------------------------------------------------------------------------------------- //
 
-define('ENCRYPTION_KEY', 'advanced_web_prog_secret_12345');
+define('ENCRYPTION_KEY', 'advanced_web_programming_encryption_key');
 
 define('CIPHER_METHOD', 'AES-256-CBC');
 
@@ -30,7 +30,7 @@ $upload_status = '';
 
 // ---------------------------------------------------------------------------------------------- //
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['secure_file']) === true) {
+if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_FILES['secure_file']) === true) {
     
     $file = $_FILES['secure_file'];
     
@@ -40,13 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['secure_file']) === t
     
     if ($file['error'] !== UPLOAD_ERR_OK) {
         
-        $upload_message = "File upload error occurred.";
+        $upload_message = 'file upload error occurred';
         
         $upload_status = 'error';
         
     } elseif (in_array($file_extension, $allowed_extensions) === false) {
         
-        $upload_message = "Invalid format. Only PDF, JPEG, and PNG are allowed.";
+        $upload_message = 'invalid format, only pdf, jpeg, and png are allowed';
         
         $upload_status = 'error';
         
@@ -68,13 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['secure_file']) === t
         
         if (file_put_contents($target_filepath, $final_content) !== false) {
             
-            $upload_message = "File '" . htmlspecialchars($file['name']) . "' encrypted and saved!";
+            $upload_message = 'file \'' . htmlspecialchars($file['name']) . '\' encrypted and saved';
             
             $upload_status = 'success';
             
         } else {
             
-            $upload_message = "Failed to save the encrypted file.";
+            $upload_message = 'failed to save the encrypted file';
             
             $upload_status = 'error';
             
@@ -144,23 +144,29 @@ if (isset($_GET['download']) === true) {
                 
                 echo $decrypted_content;
                 
-                exit;
+                exit(0);
                 
             } else {
-                
-                die("Decryption failed. Invalid key or corrupted file.");
-                
+
+                echo PHP_EOL . '[ ERROR ] | decryption failed, invalid key or corrupted file' . PHP_EOL . PHP_EOL;
+
+                exit(1);
+
             }
-            
+
         } else {
-            
-            die("File format is invalid or corrupted.");
-            
+
+            echo PHP_EOL . '[ ERROR ] | file format is invalid or corrupted' . PHP_EOL . PHP_EOL;
+
+            exit(1);
+
         }
-        
+
     } else {
-        
-        die("Requested file does not exist on the server.");
+
+        echo PHP_EOL . '[ ERROR ] | requested file does not exist on the server' . PHP_EOL . PHP_EOL;
+
+        exit(1);
         
     }
     
@@ -312,7 +318,7 @@ if (is_dir(UPLOAD_DIR) === true) {
 
                     <!------------------------------------------------------------------------------------------------->
 
-                    <form action="task_3.php" method="POST" enctype="multipart/form-data" class="flex flex-col gap-6">
+                    <form action="index.php" method="POST" enctype="multipart/form-data" class="flex flex-col gap-6">
                         
                         <!------------------------------------------------------------------------------------------------->
 
