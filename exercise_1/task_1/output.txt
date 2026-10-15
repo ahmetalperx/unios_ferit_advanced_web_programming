@@ -4,58 +4,58 @@
 
 // ---------------------------------------------------------------------------------------------- //
 
-[ INFO ] | https://stup.ferit.hr/zavrsni-radovi/page/2
+[ URL ] | https://stup.ferit.hr/zavrsni-radovi/page/2
 
-[ INFO ] | Abbrevio – web aplikacija za skraćenice | 76381967583
-[ INFO ] | Aplikacija za spajanje pasa i budućih vlasnika | 47726994562
-[ INFO ] | Web aplikacija za vođenje podataka o udomljenim psima u azilu | 47726994562
-[ INFO ] | Web aplikacija kao platforma za postavljanje i korištenje kvizova | 52685771113
-[ INFO ] | Izrada web oglasnika za usluge obavljanja poslova u kućanstvu | 52685771113
-[ INFO ] | Izrada Shopify web trgovine namijenjene proizvođaču poljoprivrednih proizvoda | 52685771113
-
-// ---------------------------------------------------------------------------------------------- //
-
-[ INFO ] | https://stup.ferit.hr/zavrsni-radovi/page/3
-
-[ INFO ] | Ponuda završnih i diplomskih radova iz područja automatike 2023./2024. | 40480660548
-[ INFO ] | Tema za završni i diplomski rad – Uzgoj biljaka na ekološki način uz potporu web aplikacije | 47726994562
-[ INFO ] | Primjena platforme za e-trgovinu – Shopify | 52685771113
-[ INFO ] | Claymorfizam kao dizajnerski trend web dizajna | 52685771113
-[ INFO ] | Tema za završni i diplomski rad – Platforma za poticanje kuhanja zdrave hrane | 47726994562
-[ INFO ] | Tema za završni i diplomski rad – Web aplikacija namijenjena vlasnicima pasa kao kućnih ljubimaca | 47726994562
+[ THESIS 1 ] | Abbrevio – web aplikacija za skraćenice | 76381967583
+[ THESIS 2 ] | Aplikacija za spajanje pasa i budućih vlasnika | 47726994562
+[ THESIS 3 ] | Web aplikacija za vođenje podataka o udomljenim psima u azilu | 47726994562
+[ THESIS 4 ] | Web aplikacija kao platforma za postavljanje i korištenje kvizova | 52685771113
+[ THESIS 5 ] | Izrada web oglasnika za usluge obavljanja poslova u kućanstvu | 52685771113
+[ THESIS 6 ] | Izrada Shopify web trgovine namijenjene proizvođaču poljoprivrednih proizvoda | 52685771113
 
 // ---------------------------------------------------------------------------------------------- //
 
-[ INFO ] | https://stup.ferit.hr/zavrsni-radovi/page/4
+[ URL ] | https://stup.ferit.hr/zavrsni-radovi/page/3
 
-[ INFO ] | Tema za završni i diplomski rad – Potpora zbrinjavanju otpada putem informatičko komunikacijske tehnologije | 47726994562
-[ INFO ] | Javna rasvjeta u funkciji marketing aktivnosti | 05128411490
-[ INFO ] | Ekonomska i energetska učinkovitost pametnog upravljanja javnom rasvjetom | 05128411490
-[ INFO ] | Rasvijetljenost pješačkih prijelaza i svjetlosna signalizacija s tehničkog i ekonomskog aspekta | 05128411490
-[ INFO ] | Tema za diplomski rad | 70036017051
-[ INFO ] | Tema za diplomski rad | 79343687407
-
-// ---------------------------------------------------------------------------------------------- //
-
-[ INFO ] | https://stup.ferit.hr/zavrsni-radovi/page/5
-
-[ INFO ] | Tema za diplomski rad – API za aplikaciju za planiranje izleta | 47726994562
-[ INFO ] | Tema za diplomski rad – Informatičko-komunikacijske tehnologije u funkciji prodaje poljoprivrednih proizvoda | 47726994562
-[ INFO ] | Teme za diplomske radove | 70036017051
-[ INFO ] | Strategije za smanjenje gubitaka u distributivnoj mreži 35 kV DP Elektroslavonije Osijek | 9549425995201
-[ INFO ] | 3.   Projektiranje sustava dojave požara – zakonski, ekonomski i tehnički aspekti | 05128411490
-[ INFO ] | 2.   Optimiziranje opće rasvjete radnih prostora obrazovne ustanove i usklađivanje s odgovarajućom normom | 05128411490
+[ THESIS 1 ] | Ponuda završnih i diplomskih radova iz područja automatike 2023./2024. | 40480660548
+[ THESIS 2 ] | Tema za završni i diplomski rad – Uzgoj biljaka na ekološki način uz potporu web aplikacije | 47726994562
+[ THESIS 3 ] | Primjena platforme za e-trgovinu – Shopify | 52685771113
+[ THESIS 4 ] | Claymorfizam kao dizajnerski trend web dizajna | 52685771113
+[ THESIS 5 ] | Tema za završni i diplomski rad – Platforma za poticanje kuhanja zdrave hrane | 47726994562
+[ THESIS 6 ] | Tema za završni i diplomski rad – Web aplikacija namijenjena vlasnicima pasa kao kućnih ljubimaca | 47726994562
 
 // ---------------------------------------------------------------------------------------------- //
 
-[ INFO ] | https://stup.ferit.hr/zavrsni-radovi/page/6
+[ URL ] | https://stup.ferit.hr/zavrsni-radovi/page/4
 
-[ INFO ] | 1.   Ekonomski i tehnički aspekti sigurnosne rasvjete – označavanja i osvjetljavanja evakuacijskih puteva | 05128411490
-[ INFO ] | Tema za diplomski u suradnji s tvrtkom Inchoo | 79343687407
-[ INFO ] | Diplomski radovi u suradnji s tvrtkom Institut RT-RK Osijek | 87006187287
-[ INFO ] | Tema za diplomski/završni rad-Uvođenje solarnih izvora energije, te rekonstrukcija rasvjete LED tehnologijom | 53535248695
-[ INFO ] | Teme za diplomske radove 3.dio | 70036017051
-[ INFO ] | Teme za diplomske radove 2.dio | 70036017051
+[ THESIS 1 ] | Tema za završni i diplomski rad – Potpora zbrinjavanju otpada putem informatičko komunikacijske tehnologije | 47726994562
+[ THESIS 2 ] | Javna rasvjeta u funkciji marketing aktivnosti | 05128411490
+[ THESIS 3 ] | Ekonomska i energetska učinkovitost pametnog upravljanja javnom rasvjetom | 05128411490
+[ THESIS 4 ] | Rasvijetljenost pješačkih prijelaza i svjetlosna signalizacija s tehničkog i ekonomskog aspekta | 05128411490
+[ THESIS 5 ] | Tema za diplomski rad | 70036017051
+[ THESIS 6 ] | Tema za diplomski rad | 79343687407
+
+// ---------------------------------------------------------------------------------------------- //
+
+[ URL ] | https://stup.ferit.hr/zavrsni-radovi/page/5
+
+[ THESIS 1 ] | Tema za diplomski rad – API za aplikaciju za planiranje izleta | 47726994562
+[ THESIS 2 ] | Tema za diplomski rad – Informatičko-komunikacijske tehnologije u funkciji prodaje poljoprivrednih proizvoda | 47726994562
+[ THESIS 3 ] | Teme za diplomske radove | 70036017051
+[ THESIS 4 ] | Strategije za smanjenje gubitaka u distributivnoj mreži 35 kV DP Elektroslavonije Osijek | 9549425995201
+[ THESIS 5 ] | 3.       Projektiranje sustava dojave požara – zakonski, ekonomski i tehnički aspekti | 05128411490
+[ THESIS 6 ] | 2.       Optimiziranje opće rasvjete radnih prostora obrazovne ustanove i usklađivanje s odgovarajućom normom | 05128411490
+
+// ---------------------------------------------------------------------------------------------- //
+
+[ URL ] | https://stup.ferit.hr/zavrsni-radovi/page/6
+
+[ THESIS 1 ] | 1.       Ekonomski i tehnički aspekti sigurnosne rasvjete – označavanja i osvjetljavanja evakuacijskih puteva | 05128411490
+[ THESIS 2 ] | Tema za diplomski u suradnji s tvrtkom Inchoo | 79343687407
+[ THESIS 3 ] | Diplomski radovi u suradnji s tvrtkom Institut RT-RK Osijek | 87006187287
+[ THESIS 4 ] | Tema za diplomski/završni rad-Uvođenje solarnih izvora energije, te rekonstrukcija rasvjete LED tehnologijom | 53535248695
+[ THESIS 5 ] | Teme za diplomske radove 3.dio | 70036017051
+[ THESIS 6 ] | Teme za diplomske radove 2.dio | 70036017051
 
 // ---------------------------------------------------------------------------------------------- //
 
