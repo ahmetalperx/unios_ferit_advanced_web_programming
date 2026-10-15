@@ -60,7 +60,7 @@ class GraduateThesis implements iRadio {
 
         } catch (PDOException $exception) {
 
-            echo PHP_EOL . '[ ERROR ] | save() | ' . $exception -> getMessage() . PHP_EOL;
+            echo PHP_EOL . '[ ERROR ] | ' . $exception -> getMessage() . PHP_EOL;
 
         }
 
@@ -82,7 +82,7 @@ class GraduateThesis implements iRadio {
 
         } catch (PDOException $exception) {
 
-            echo PHP_EOL . '[ ERROR ] | read() | ' . $exception -> getMessage() . PHP_EOL;
+            echo PHP_EOL . '[ ERROR ] | ' . $exception -> getMessage() . PHP_EOL;
 
             return [];
 
@@ -120,9 +120,9 @@ function main() : void {
 
     } catch (PDOException $exception) {
 
-        echo PHP_EOL . '[ ERROR ] | main() | ' . $exception -> getMessage() . PHP_EOL;
+        echo PHP_EOL . '[ ERROR ] | ' . $exception -> getMessage() . PHP_EOL;
 
-        exit;
+        exit(1);
 
     }
 
