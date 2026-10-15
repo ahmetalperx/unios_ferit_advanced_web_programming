@@ -2,13 +2,13 @@
 
 // ---------------------------------------------------------------------------------------------- //
 
-// cd C:\Users\ahmetalper\Desktop\advanced_web_programming\exercise_2 && php -S localhost:8000
+// cd C:\Users\ahmetalper\Desktop\advanced_web_programming\exercise_2\task_2 && php -S localhost:8000
 
-// http://localhost:8000/task_2.php
+// http://localhost:8000/index.php
 
 // ---------------------------------------------------------------------------------------------- //
 
-$xml_file = 'LV2.xml';
+$xml_file = __DIR__ . '/LV2.xml';
 
 // ---------------------------------------------------------------------------------------------- //
 
@@ -112,13 +112,17 @@ if (file_exists($xml_file) === true) {
 
                     <?php
                     
-                        $gender = strtolower((string)$person -> spol);
+                        $gender = strtolower((string) $person -> spol);
 
                         $is_male = ($gender === 'male' || $gender === 'm');
                         
                         $badge_bg = $is_male ? 'bg-blue-500/20 text-blue-300 border-blue-500/30' : 'bg-rose-500/20 text-rose-300 border-rose-500/30';
                         
                         $icon = $is_male ? 'fa-mars' : 'fa-venus';
+
+                        $initials = strtoupper(substr((string) $person -> ime, 0, 1) . substr((string) $person -> prezime, 0, 1));
+
+                        $fallback_svg = 'data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'' . ($is_male ? '%230284c7' : '%23e11d48') . '\'/><text x=\'50\' y=\'55\' font-family=\'sans-serif\' font-size=\'38\' font-weight=\'bold\' fill=\'white\' text-anchor=\'middle\' dominant-baseline=\'middle\'>' . $initials . '</text></svg>';
                         
                     ?>
 
@@ -142,7 +146,7 @@ if (file_exists($xml_file) === true) {
                             
                             <div class="w-24 h-24 shrink-0 mx-auto -mt-12 bg-slate-800 rounded-full p-1.5 shadow-2xl relative z-10">
                                 
-                                <img src="<?php echo htmlspecialchars($person -> slika); ?>" alt="Avatar" loading="lazy" class="w-full h-full rounded-full object-cover bg-slate-900 border border-slate-700">
+                                <img src="<?php echo htmlspecialchars($person -> slika); ?>" alt="<?php echo htmlspecialchars($person -> ime . ' ' . $person -> prezime); ?>" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null; this.src='<?php echo $fallback_svg; ?>';" class="w-full h-full rounded-full object-cover bg-slate-900 border border-slate-700">
                             
                             </div>
 
